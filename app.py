@@ -50,6 +50,9 @@ gpu = st.selectbox('GPU',data['Gpu Brand'].unique())
 
 OpSys = st.selectbox('Operating System',data['OpSys'].unique())
 
+discount = st.number_input('Discount %',value=0)
+discount = 1 - discount/100
+
 if st.button('Predict Price'):
     #preprocessing
     if touchscreen == 'Yes':
@@ -72,4 +75,4 @@ if st.button('Predict Price'):
 
     prediction = pipe.predict(values)
 
-    st.subheader(f"The predicted price of this configuration is between {round(int(np.exp(prediction[0])),-3)} to {round(int(np.exp(prediction[0])+1000),-3)}")
+    st.subheader(f"The predicted price of this configuration is between {round(int(np.exp(prediction[0]*discount)),-3)} to {round(int(np.exp(prediction[0]*discount)+1000),-3)}")
