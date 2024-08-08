@@ -67,8 +67,8 @@ if st.button('Predict Price'):
 
     ppi = ((X_res**2) + (Y_res**2))**0.5/screen_size
 
-    values = pd.DataFrame([[company,type,ram,OpSys,weight,touchscreen,IPS,ppi,cpu,2.5,hdd,ssd,gpu]],
-                        columns=['Company','TypeName','Ram','OpSys','Weight','Touchscreen','IPS','PPI','Cpu Name','Cpu Speed','HDD','SSD','Gpu Brand'])
+    values = pd.DataFrame([[company,type,ram,OpSys,weight,touchscreen,IPS,ppi,cpu,hdd,ssd,gpu]],
+                        columns=['Company','TypeName','Ram','OpSys','Weight','Touchscreen','IPS','PPI','Cpu Name','HDD','SSD','Gpu Brand'])
 
     prediction = pipe.predict(values)
 
