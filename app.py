@@ -22,7 +22,7 @@ company = st.selectbox('Brand',data['Company'].unique())
 type = st.selectbox('Type',data['TypeName'].unique())
 
 # Ram
-ram = st.selectbox('RAM(in GB)',[2,4,6,8,12,16,24,32,64])
+ram = st.selectbox('RAM(in GB)',[2,4,6,8,12,16,24,32,64], index=3)
 
 # weight
 weight = st.number_input('Weight of the Laptop (in Kg))', value = 1.4)
@@ -31,7 +31,7 @@ weight = st.number_input('Weight of the Laptop (in Kg))', value = 1.4)
 touchscreen = st.selectbox('Touchscreen',['No','Yes'])
 
 # IPS
-IPS = st.selectbox('IPS',['No','Yes'])
+IPS = st.selectbox('IPS',['No','Yes'], index=1)
 
 # screen size
 screen_size = st.number_input('Screen Size (in inches)', value = 15.7)
@@ -44,7 +44,7 @@ cpu = st.selectbox('CPU Brand',data['Cpu Name'].unique())
 
 hdd = st.selectbox('HDD (in GB)',[0,128,256,512,1024,2048])
 
-ssd = st.selectbox('SSD (in GB)',[0,8,128,256,512,1024])
+ssd = st.selectbox('SSD (in GB)',[0,8,128,256,512,1024], index=4)
 
 gpu = st.selectbox('GPU',data['Gpu Brand'].unique())
 
